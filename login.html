@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Smart Food Delivery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+
+            /* 🌈 Aesthetic background */
+            background: linear-gradient(135deg, #667eea, #764ba2);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* 🍽️ Title */
+        .title {
+            text-align: center;
+            color: white;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+        }
+
+        /* Login box */
+        .box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 220px;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            background: #ff7e5f;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #ff5e3a;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- 🍽️ APP NAME -->
+<h1 class="title">🍽️ Smart Food Delivery</h1>
+
+<!-- 🔐 LOGIN BOX -->
+<div class="box">
+    <h2>Login</h2>
+
+    <form action="/dashboard" method="get">
+        <input name="username" placeholder="Username"><br>
+        <input name="password" type="password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

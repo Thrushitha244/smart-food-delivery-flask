@@ -1,0 +1,21 @@
+<h1>🍔 Smart Food Delivery Dashboard</h1>
+
+<div class="card">
+    <h3>Menu</h3>
+
+    {% for food in foods %}
+        <div style="margin-bottom:15px;">
+            <b>{{ food.name }}</b> - ₹{{ food.price }}
+
+            <form action="/order" method="post" style="display:inline;">
+                <input type="hidden" name="item" value="{{ food.name }}">
+                <button type="submit">Order</button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="card">
+    <h3>Analytics</h3>
+    <img src="/static/dashboard.png">
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI';
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            width: 350px;
+            margin: auto;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff5e3a;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🚚 Delivery Details</h1>
+
+<div class="box">
+
+    <form action="/place_order" method="get">
+
+        <input name="location" placeholder="Enter Delivery Location" required>
+
+        <select name="payment" required>
+            <option value="">Select Payment Method</option>
+            <option value="COD">Cash on Delivery</option>
+            <option value="UPI">UPI Payment</option>
+        </select>
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

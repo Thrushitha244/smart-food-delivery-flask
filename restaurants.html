@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Restaurants</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+
+    /* 🌈 Aesthetic mixed premium background */
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+
+    margin: 0;
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    color: white;
+    padding: 20px;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+    color: white;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Button */
+button {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #ff7e5f;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff5e3a;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🍽️ Select Restaurant</h1>
+
+<div class="container">
+
+{% for r in restaurants %}
+<div class="card">
+
+    <h3>{{ r }}</h3>
+
+    <a href="/menu/{{ r }}">
+        <button>View Menu</button>
+    </a>
+
+</div>
+{% endfor %}
+
+</div>
+
+</body>
+</html>

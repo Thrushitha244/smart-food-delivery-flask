@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Food Delivery - Cart</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI';
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            text-align: center;
+            margin: 0;
+            color: white;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 40px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            margin: 15px auto;
+            padding: 15px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .remove {
+            background: #ff4d4d;
+            color: white;
+        }
+
+        .remove:hover {
+            background: #ff1a1a;
+        }
+
+        .checkout {
+            background: #00c853;
+            color: white;
+            font-size: 16px;
+            padding: 12px 25px;
+            margin-top: 20px;
+        }
+
+        .checkout:hover {
+            background: #00a844;
+        }
+
+        .total {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .empty {
+            margin-top: 50px;
+            font-size: 22px;
+            color: #ffcccb;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🛒 Your Cart</h1>
+
+{% if cart|length == 0 %}
+    <p class="empty">Your cart is empty 😔</p>
+{% endif %}
+
+{% for item in cart %}
+    <div class="card">
+        <h3>{{ item.name }}</h3>
+        <p>₹{{ item.price }} × {{ item.quantity }}</p>
+
+        <a href="/remove/{{ item.name }}">
+            <button class="btn remove">Remove</button>
+        </a>
+    </div>
+{% endfor %}
+
+<h2 class="total">Total: ₹{{ total }}</h2>
+
+<!-- 🚚 Checkout instead of direct order -->
+<a href="/checkout">
+    <button class="btn checkout">Proceed to Checkout 🚚</button>
+</a>
+
+</body>
+</html>
